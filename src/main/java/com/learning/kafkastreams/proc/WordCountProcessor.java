@@ -15,7 +15,7 @@ public class WordCountProcessor {
     private static final Serde<String> STRING_SERDE = Serdes.String();
 
     @Autowired
-    void buildPipeline(StreamsBuilder streamsBuilder) {
+    public void buildPipeline(StreamsBuilder streamsBuilder) {
         KStream<String, String> messageStream = streamsBuilder
                 .stream("input-topic", Consumed.with(STRING_SERDE, STRING_SERDE));
 
